@@ -1,5 +1,5 @@
 
-var objPeople = [
+var users = [
 {
 username: 'admin',
 email:'admin',
@@ -10,10 +10,11 @@ password: 'admin'
 function registerUser() {
 
 
-var newUserName = document.getElementById("name").value;
+var newUserName = document.getElementById("firstname").value;
 var newEmail= document.getElementById("email").value;
 var newPassword = document.getElementById("pass").value;
 var rePassword = document.getElementById("repass").value;
+
 var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g; 
                                     
 var regName = /^[a-zA-Z ]{2,30}$/;  
@@ -37,9 +38,9 @@ alert("Please enter a valid e-mail address");
                     email:newEmail
                     };
                   var found=false;
-                    for(var i = 0; i < objPeople.length; i++) {
+                    for(var i = 0; i < users.length; i++) {
                   
-                    if(newEmail == objPeople[i].email) {
+                    if(newEmail == users[i].email) {
                      found=true;
                         
                        
@@ -50,8 +51,8 @@ alert("Please enter a valid e-mail address");
                     if(found){
     alert('Email Is Used');
                     }else{
-     objPeople.push(newUser);
-                    console.log(objPeople);
+     users.push(newUser);
+                    console.log(users);
                     document.getElementById("myform").reset();
             }
             
@@ -65,3 +66,36 @@ alert("Please enter a valid e-mail address");
 }
 
 }}
+function hide(){
+var signUpForm=document.getElementById("myform");
+var signInForm=document.getElementById("myform1");
+
+signInForm.style.display="none";
+signUpForm.style.display="block";
+}
+function show(){
+    var signUpForm=document.getElementById("myform");
+    var signInForm=document.getElementById("myform1");
+    
+    signInForm.style.display="block";
+    signUpForm.style.display="none";
+    }
+    function login(){
+
+var email=document.getElementById("Email").value;
+var pass =document.getElementById("Pass").value;
+
+var found=false;
+for(var i=0;i<users.length;i++){
+    if(email==users[i].email&&pass==users[i].password){
+      found=true;
+    }
+   
+}
+if(found){
+    alert("done");
+}
+else{
+    alert("wrong");
+}
+    }
