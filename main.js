@@ -19,7 +19,7 @@ var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
                                     
 var regName = /^[a-zA-Z ]{2,30}$/;  
 if(newPassword!=rePassword){
-   alert("Passwords do not match");
+   alert("password not match");
    
 }else{
     if(newPassword==""||newPassword.length < 6){
