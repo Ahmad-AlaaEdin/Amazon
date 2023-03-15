@@ -53,6 +53,7 @@ alert("Please enter a valid e-mail address");
                     }else{
      users.push(newUser);
                     console.log(users);
+                      alert("Successful Registration");
                     document.getElementById("myform").reset();
             }
             
